@@ -1,4 +1,4 @@
-package javaIfElse;
+package org.example;
 
 public class JavaIfElse {
 }

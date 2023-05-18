@@ -1,5 +1,3 @@
-package javaIfElse;
-
 import java.util.Scanner;
 
 public class JavaStringToken {
