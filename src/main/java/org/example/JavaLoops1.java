@@ -1,5 +1,6 @@
+package org.example;
 
-        import java.io.*;
+import java.io.*;
 
 public class JavaLoops1 {
     public static void main(String[] args) throws IOException {
