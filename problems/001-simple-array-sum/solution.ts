@@ -1,10 +1,9 @@
-// Adapt the HackerRank code template to TypeScript.
-// Preserve the function name and I/O structure from the original template.
-// The structure below is an example only — every problem is different.
+// Simple Array Sum
+// https://www.hackerrank.com/challenges/simple-array-sum/problem
 
 import * as readline from 'readline';
 
-function solve(ar: number[]): number {
+function simpleArraySum(ar: number[]): number {
     // Write your solution here
     return 0;
 }
@@ -16,6 +15,6 @@ rl.on('line', (line: string) => lines.push(line.trim()));
 rl.on('close', () => {
     const n = parseInt(lines[0]);
     const ar = lines[1].split(' ').map(Number);
-    const result = solve(ar);
+    const result = simpleArraySum(ar);
     console.log(result);
 });

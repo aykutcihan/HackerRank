@@ -20,3 +20,5 @@ problems/**/*.js
 
 # Mac OS
 .DS_Store
+
+.claude

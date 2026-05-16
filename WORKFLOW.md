@@ -5,6 +5,12 @@ It is used as a reference for both the developer and AI assistants.
 
 ---
 
+## 🌐 Communication Rules
+
+- All communication, code, comments, and file content are written in **English**
+
+---
+
 ## ➕ Adding a New Problem
 
 When a new HackerRank problem is given, the AI assistant will:
@@ -18,7 +24,7 @@ When a new HackerRank problem is given, the AI assistant will:
 2. Create the following structure inside that folder:
    ```
    001-java-if-else/
-   ├── README.md        ← filled with problem details (see template below)
+   ├── PROBLEM.md       ← exact problem text + personal notes (single source of truth)
    ├── hints.md         ← layered hints, do not open unless stuck
    ├── notes.md         ← personal learning log, filled after solving
    ├── warmups/
@@ -30,7 +36,7 @@ When a new HackerRank problem is given, the AI assistant will:
    └── solution.ts      ← empty, to be filled after warmups
    ```
 
-3. Fill the `README.md` with the problem details using the template below.
+3. Fill the `PROBLEM.md` with the problem details using the template below.
 
 4. Analyze the problem and break it into smaller concepts.
 
@@ -61,24 +67,38 @@ Each problem is solved in this exact order:
 - Developer writes `solution.ts`
 
 ### Step 5 — Finalize
-- Developer fills in `README.md` (approach, complexity, notes)
+- Developer fills in `PROBLEM.md` (approach, complexity, notes section)
 - Developer fills in `notes.md` (personal learning log)
 - AI updates the Problem Index table in the root `README.md`
 
 ---
 
-## 📋 Problem README.md Template
+## 📋 Problem PROBLEM.md Template
 
-When creating a new problem folder, fill README.md with this structure:
+When creating a new problem folder, `PROBLEM.md` contains two parts:
+
+**Part 1 — Exact problem text** (copied verbatim from HackerRank, never modified)
+
+**Part 2 — Personal notes** (filled in by developer as they work)
 
 ```markdown
 # [Problem Name]
 
-- **HackerRank Link:** [URL]
-- **Difficulty:** Easy / Medium / Hard
-- **Category:** (e.g. Arrays, Strings, Loops)
+**HackerRank Link:** [URL]
+**Difficulty:** Easy / Medium / Hard
+**Category:** (e.g. Arrays, Strings, Loops)
 
-## 📝 Problem Summary
+---
+
+## Problem Statement
+[Exact text]
+
+## Input Format / Constraints / Output Format / Sample I/O / Explanation
+[Exact text]
+
+---
+
+## 📝 My Summary
 _(Short description in your own words)_
 
 ## 🔍 Concepts Needed
@@ -96,6 +116,13 @@ _(Fill after solving)_
 ## ⏱️ Complexity
 - Time: O(?)
 - Space: O(?)
+
+## 📊 Progress
+| Language | Status |
+|----------|--------|
+| Python | ❌ |
+| Java | ❌ |
+| TypeScript | ❌ |
 ```
 
 ---
@@ -276,10 +303,88 @@ _(One sentence: what did this problem teach you?)_
 
 ## 🤖 Instructions for AI Assistants
 
+### 📥 When Developer Shares a New Problem
+
+When the developer pastes a HackerRank problem, the AI will immediately:
+
+#### Step 0 — Save the Problem
+
+1. Determine the next problem number from the existing folders under `problems/`
+2. Create the folder:
+   ```
+   problems/NNN-problem-name/
+   ```
+3. Create `problems/NNN-problem-name/PROBLEM.md` with the EXACT original problem text pasted by the developer — do not summarize, do not paraphrase, copy it word for word including:
+   - Problem title
+   - Problem description
+   - Input format
+   - Constraints
+   - Output format
+   - Sample input / output
+   - Explanation (if provided)
+
+   Format:
+   ```markdown
+   # [Problem Title]
+
+   **HackerRank Link:** [ask developer to paste the URL if not provided]
+   **Difficulty:** [Easy / Medium / Hard]
+   **Category:** [e.g. Strings, Arrays, Loops]
+
+   ---
+
+   ## Problem Statement
+   [Exact problem text here]
+
+   ## Input Format
+   [Exact input format here]
+
+   ## Constraints
+   [Exact constraints here]
+
+   ## Output Format
+   [Exact output format here]
+
+   ## Sample Input
+   [Sample input here]
+
+   ## Sample Output
+   [Sample output here]
+
+   ## Explanation
+   [Explanation if provided]
+   ```
+
+4. Also save the HackerRank code template in `PROBLEM.md` under a new section:
+   ```
+   ## HackerRank Code Template
+   [paste the exact code template here]
+   ```
+   The developer will paste the code editor template shown on the HackerRank problem page.
+   This template is problem-specific — it changes every problem.
+
+5. Create solution files automatically from the Java template:
+   - `solution.java` → use the exact HackerRank Java template, add `return 0;` placeholder to the function
+   - `solution.py` → AI generates this automatically by adapting the Java template to Python (same function name, same I/O logic)
+   - `solution.ts` → AI generates this automatically by adapting the Java template to TypeScript (same function name, same I/O logic)
+   - Developer only pastes the Java template — AI handles Python and TypeScript
+   - `hints.md` (from template)
+   - `notes.md` (from template)
+   - `warmups/` folder (empty for now)
+
+5. Confirm to the developer which folder was created and show the full folder structure.
+
+6. THEN proceed with the warmup plan analysis.
+
+> **Note:** `PROBLEM.md` is read-only — it is never modified after creation.
+> It is the single source of truth for the original problem statement.
+
+---
+
 When the developer shares a HackerRank problem:
 
 1. Read WORKFLOW.md first.
-2. Create the problem folder and files.
+2. Create the problem folder and files (following Step 0 above).
 3. Analyze the problem deeply:
    - What language basics are needed?
    - What data structures are used?
@@ -298,3 +403,16 @@ When the developer shares a HackerRank problem:
 11. After Java → repeat ladder in TypeScript.
 12. Note: Java and TypeScript warmups can move faster since the logic is already understood — focus on language syntax differences.
 13. When the problem is fully solved in all 3 languages, update the Problem Index table in the root `README.md` with the new row.
+
+---
+
+## 📊 Problem Index Update Rule
+
+When a problem is fully solved in a language, update the Problem Index table in the root `README.md`:
+
+- ❌ = Not started
+- 🔄 = Warmups in progress or solution being written
+- ✅ = Solution complete and reviewed
+
+Update the status for each language independently as the developer progresses.
+When all three languages show ✅, the problem is considered fully complete.
