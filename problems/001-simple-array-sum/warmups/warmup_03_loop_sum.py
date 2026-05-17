@@ -11,3 +11,8 @@
 numbers = [4, 8, 1, 6, 5, 4]
 
 # Your solution here:
+
+sum = 0
+for num in numbers:
+    sum +=num
+print(sum)
