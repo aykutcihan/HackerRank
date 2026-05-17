@@ -32,7 +32,7 @@ When a new HackerRank problem is given, the AI assistant will:
    │   ├── warmup_01_read_input.java
    │   └── warmup_01_read_input.ts
    ├── solution.py      ← empty, to be filled after warmups
-   ├── solution.java    ← empty, to be filled after warmups
+   ├── Solution.java    ← empty, to be filled after warmups
    └── solution.ts      ← empty, to be filled after warmups
    ```
 
@@ -60,7 +60,7 @@ Each problem is solved in this exact order:
 
 ### Step 3 — Repeat in Java
 - Same warmups repeated in Java (`warmup_01.java` etc.)
-- Developer writes `solution.java`
+- Developer writes `Solution.java`
 
 ### Step 4 — Repeat in TypeScript
 - Same warmups repeated in TypeScript (`warmup_01.ts` etc.)
@@ -214,6 +214,8 @@ Every warmup file is created with a header so the developer knows exactly what t
 //   Input:  ...
 //   Output: ...
 
+package warmups;
+
 public class warmup_NN_topic {
     public static void main(String[] args) {
         // Your solution here:
@@ -364,7 +366,7 @@ When the developer pastes a HackerRank problem, the AI will immediately:
    This template is problem-specific — it changes every problem.
 
 5. Create solution files automatically from the Java template:
-   - `solution.java` → use the exact HackerRank Java template, add `return 0;` placeholder to the function
+   - `Solution.java` → use the exact HackerRank Java template, add `return 0;` placeholder to the function. **No `package` declaration.**
    - `solution.py` → AI generates this automatically by adapting the Java template to Python (same function name, same I/O logic)
    - `solution.ts` → AI generates this automatically by adapting the Java template to TypeScript (same function name, same I/O logic)
    - Developer only pastes the Java template — AI handles Python and TypeScript
@@ -372,9 +374,30 @@ When the developer pastes a HackerRank problem, the AI will immediately:
    - `notes.md` (from template)
    - `warmups/` folder (empty for now)
 
-5. Confirm to the developer which folder was created and show the full folder structure.
+6. Create the IntelliJ module file `NNN-problem-name.iml` inside the problem folder:
+   ```xml
+   <?xml version="1.0" encoding="UTF-8"?>
+   <module type="JAVA_MODULE" version="4">
+     <component name="NewModuleRootManager" inherit-compiler-output="true">
+       <exclude-output />
+       <content url="file://$MODULE_DIR$">
+         <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
+       </content>
+       <orderEntry type="inheritedJdk" />
+       <orderEntry type="sourceFolder" forTests="false" />
+     </component>
+   </module>
+   ```
 
-6. THEN proceed with the warmup plan analysis.
+7. Register the new module in `.idea/modules.xml` by adding one line inside `<modules>`:
+   ```xml
+   <module fileurl="file://$PROJECT_DIR$/problems/NNN-problem-name/NNN-problem-name.iml"
+           filepath="$PROJECT_DIR$/problems/NNN-problem-name/NNN-problem-name.iml" />
+   ```
+
+8. Confirm to the developer which folder was created and show the full folder structure.
+
+9. THEN proceed with the warmup plan analysis.
 
 > **Note:** `PROBLEM.md` is read-only — it is never modified after creation.
 > It is the single source of truth for the original problem statement.
@@ -402,6 +425,7 @@ When the developer shares a HackerRank problem:
 10. After all warmups are done in Python → repeat ladder in Java.
 11. After Java → repeat ladder in TypeScript.
 12. Note: Java and TypeScript warmups can move faster since the logic is already understood — focus on language syntax differences.
+13. **Java warmup files must start with `package warmups;`** — this is required for IntelliJ to recognize the file correctly inside the `warmups/` subdirectory. `Solution.java` does NOT get a package declaration.
 13. When the problem is fully solved in all 3 languages, update the Problem Index table in the root `README.md` with the new row.
 
 ---

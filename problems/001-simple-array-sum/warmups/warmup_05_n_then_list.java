@@ -13,6 +13,8 @@
 //   Output:
 //     [10, 20, 30]
 
+package warmups;
+
 import java.util.Arrays;
 import java.util.Scanner;
 

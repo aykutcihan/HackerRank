@@ -8,6 +8,8 @@
 //   Input:  ...
 //   Output: ...
 
+package warmups;
+
 public class warmup_01 {
     public static void main(String[] args) {
         // Your solution here:

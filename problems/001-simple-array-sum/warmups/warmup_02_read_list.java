@@ -14,6 +14,8 @@
 //     9
 //     1
 
+package warmups;
+
 import java.util.Scanner;
 
 public class warmup_02_read_list {

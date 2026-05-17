@@ -8,6 +8,7 @@
     "typescript": "^5.0.0"
   },
   "scripts": {
-    "run:ts": "ts-node"
+    "run:ts": "ts-node",
+    "run:java": "node scripts/run-java.js"
   }
 }

@@ -16,7 +16,7 @@ HackerRank/
         │   ├── warmup_01.java
         │   └── warmup_01.ts
         ├── solution.py
-        ├── solution.java
+        ├── Solution.java
         └── solution.ts
 ```
 
@@ -43,7 +43,7 @@ Each problem follows this process:
 
 ### Java
 - Version: 17+
-- Run: `javac solution.java && java solution`
+- Run: `javac Solution.java && java solution`
 
 ### TypeScript
 - Version: 5.x

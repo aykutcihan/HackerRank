@@ -12,6 +12,8 @@
 //   Input:  12
 //   Output: 24
 
+package warmups;
+
 import java.util.Scanner;
 
 public class warmup_01_read_integer {

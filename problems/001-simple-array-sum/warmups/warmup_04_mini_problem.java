@@ -12,6 +12,8 @@
 //   Input:  5 5 5
 //   Output: 15
 
+package warmups;
+
 import java.util.Scanner;
 
 public class warmup_04_mini_problem {

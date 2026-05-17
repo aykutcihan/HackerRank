@@ -8,6 +8,8 @@
 //
 // Expected output: 28
 
+package warmups;
+
 public class warmup_03_loop_sum {
     public static void main(String[] args) {
         int[] numbers = {4, 8, 1, 6, 5, 4};
