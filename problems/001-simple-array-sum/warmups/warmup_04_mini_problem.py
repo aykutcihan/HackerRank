@@ -13,9 +13,3 @@
 #   Output: 15
 
 # Your solution here:
-
-top = 0
-numbers = list(map(int, input().split()))
-for num in numbers:
-    top +=num
-print(top)

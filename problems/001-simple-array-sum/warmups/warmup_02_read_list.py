@@ -15,10 +15,3 @@
 #     1
 
 # Your solution here:
-
-
-numbers = list(map(int, input().split()))
-for num in numbers:
-    print(num)
-
-

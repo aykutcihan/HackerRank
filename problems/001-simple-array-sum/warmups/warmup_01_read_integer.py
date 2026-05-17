@@ -13,6 +13,3 @@
 #   Output: 24
 
 # Your solution here:
- 
-x= int(input())
-print(f"{x*2}")

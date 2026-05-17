@@ -33,7 +33,7 @@ Each problem follows this process:
 
 | # | Problem | Difficulty | Python | Java | TypeScript |
 |---|---------|------------|--------|------|------------|
-| 001 | [Simple Array Sum](problems/001-simple-array-sum/PROBLEM.md) | Easy | ✅ | ❌ | ❌ |
+| 001 | [Simple Array Sum](problems/001-simple-array-sum/README.md) | Easy | ❌ | ❌ | ❌ |
 
 ## 🛠️ Languages & Setup
 

@@ -105,6 +105,6 @@ _(Fill after solving)_
 ## 📊 Progress
 | Language | Status |
 |----------|--------|
-| Python | ✅ |
+| Python | ❌ |
 | Java | ❌ |
 | TypeScript | ❌ |
