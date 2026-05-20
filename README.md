@@ -34,6 +34,8 @@ Each problem follows this process:
 | # | Problem | Difficulty | Python | Java | TypeScript |
 |---|---------|------------|--------|------|------------|
 | 001 | [Simple Array Sum](problems/001-simple-array-sum/PROBLEM.md) | Easy | ✅ | ❌ | ❌ |
+| 002 | [Solve Me First](problems/002-solve-me-first/PROBLEM.md) | Easy | ✅ | ❌ | ❌ |
+| 003 | [Compare the Triplets](problems/003-compare-the-triplets/PROBLEM.md) | Easy | ❌ | ❌ | ❌ |
 
 ## 🛠️ Languages & Setup
 
